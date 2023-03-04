@@ -21,7 +21,9 @@ export const post: APIRoute = async (context) => {
     method: 'POST',
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
-      messages,
+      messages:{
+        {'role': 'system', 'content': f'you are {BOT_ROLE}, a cute catgirl.'}
+      },
       temperature: 0.6,
       stream: true,
     }),
